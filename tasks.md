@@ -35,6 +35,13 @@ A web-based platform for hosting theological discussions and debates, focusing o
 - [ ] Implement Mongoose schemas and models
 - [ ] Set up error handling middleware
 - [ ] Create authentication middleware (if needed)
+- [ ] Create and maintain Postman collection:
+  - Set up collection structure
+  - Add all API endpoints
+  - Include example requests/responses
+  - Document authentication
+  - Add environment variables
+  - Create test cases
 
 ## Phase 3: Frontend Development
 - [ ] Create Next.js app directory structure:
@@ -56,8 +63,10 @@ A web-based platform for hosting theological discussions and debates, focusing o
   - API routes
   - Mongoose models
   - User interactions
+  - Postman collection tests
 - [ ] Deploy to production environment
 - [ ] Set up monitoring and logging
+- [ ] Update Postman collection for production
 
 ## Technical Requirements
 - Next.js 14+ with App Router
@@ -65,6 +74,7 @@ A web-based platform for hosting theological discussions and debates, focusing o
 - Next.js default CSS modules for styling
 - API routes within app directory
 - TypeScript for type safety
+- Postman for API testing and documentation
 
 ## Security Considerations
 - Implement proper authentication
