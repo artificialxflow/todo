@@ -1,0 +1,213 @@
+{
+  "info": {
+    "name": "Theological Questions API",
+    "description": "API collection for managing theological questions and discussions",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Questions",
+      "description": "Endpoints for managing theological questions",
+      "item": [
+        {
+          "name": "Get All Questions",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/questions",
+              "host": ["{{base_url}}"],
+              "path": ["api", "questions"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Question by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/questions/From-Torah-to-Revelation-Confronting-Faith-and-Seeking-Solutions-for-Coexistence-al9om8riynd0",
+              "host": ["{{base_url}}"],
+              "path": ["api", "questions", "From-Torah-to-Revelation-Confronting-Faith-and-Seeking-Solutions-for-Coexistence-al9om8riynd0"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add New Question",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"questionId\": \"From-Torah-to-Revelation-Confronting-Faith-and-Seeking-Solutions-for-Coexistence-al9om8riynd0\",\n    \"author\": \"Logik Meter\",\n    \"locale\": \"en\",\n    \"title\": \"From Torah to Revelation: Confronting Faith and Seeking Solutions for Coexistence\",\n    \"categories\": [\"Judaism\", \"Christianity\"],\n    \"status\": \"Pending\",\n    \"caption\": \"A brief summary or subtitle for the question.\",\n    \"aboutQuestion\": \"A detailed description or context about the question.\",\n    \"questionSummary\": \"A short summary of the question's main point.\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/questions",
+              "host": ["{{base_url}}"],
+              "path": ["api", "questions"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Question",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"Updated Title\",\n    \"categories\": [\"Judaism\", \"Christianity\", \"Islam\"],\n    \"status\": \"Active\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/questions/From-Torah-to-Revelation-Confronting-Faith-and-Seeking-Solutions-for-Coexistence-al9om8riynd0",
+              "host": ["{{base_url}}"],
+              "path": ["api", "questions", "From-Torah-to-Revelation-Confronting-Faith-and-Seeking-Solutions-for-Coexistence-al9om8riynd0"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Question",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/questions/From-Torah-to-Revelation-Confronting-Faith-and-Seeking-Solutions-for-Coexistence-al9om8riynd0",
+              "host": ["{{base_url}}"],
+              "path": ["api", "questions", "From-Torah-to-Revelation-Confronting-Faith-and-Seeking-Solutions-for-Coexistence-al9om8riynd0"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Voting",
+      "description": "Endpoints for voting on questions",
+      "item": [
+        {
+          "name": "Vote on Question",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"vote\": \"up\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/questions/From-Torah-to-Revelation-Confronting-Faith-and-Seeking-Solutions-for-Coexistence-al9om8riynd0/vote",
+              "host": ["{{base_url}}"],
+              "path": ["api", "questions", "From-Torah-to-Revelation-Confronting-Faith-and-Seeking-Solutions-for-Coexistence-al9om8riynd0", "vote"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Comments",
+      "description": "Endpoints for managing comments on questions",
+      "item": [
+        {
+          "name": "Get Comments",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/questions/From-Torah-to-Revelation-Confronting-Faith-and-Seeking-Solutions-for-Coexistence-al9om8riynd0/comments",
+              "host": ["{{base_url}}"],
+              "path": ["api", "questions", "From-Torah-to-Revelation-Confronting-Faith-and-Seeking-Solutions-for-Coexistence-al9om8riynd0", "comments"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add Comment",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"author\": \"User123\",\n    \"content\": \"This is a thoughtful comment on the theological question.\",\n    \"locale\": \"en\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/questions/From-Torah-to-Revelation-Confronting-Faith-and-Seeking-Solutions-for-Coexistence-al9om8riynd0/comments",
+              "host": ["{{base_url}}"],
+              "path": ["api", "questions", "From-Torah-to-Revelation-Confronting-Faith-and-Seeking-Solutions-for-Coexistence-al9om8riynd0", "comments"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Comment",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/comments/comment-id-123",
+              "host": ["{{base_url}}"],
+              "path": ["api", "comments", "comment-id-123"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "pm.test(\"Status code is 200\", function () {",
+          "    pm.response.to.have.status(200);",
+          "});",
+          "",
+          "pm.test(\"Response time is less than 200ms\", function () {",
+          "    pm.expect(pm.response.responseTime).to.be.below(200);",
+          "});"
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000",
+      "type": "string"
+    }
+  ]
+} 
