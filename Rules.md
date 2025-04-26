@@ -21,6 +21,17 @@
   - build artifacts
   - IDE specific files
 
+## API Documentation & Testing
+- Maintain Postman collection for all APIs
+- Keep collection updated with every API change
+- Include example requests and responses
+- Document authentication requirements
+- Include environment variables setup
+- Structure collection by feature/module
+- Add request/response examples
+- Include error scenarios
+- Document rate limits if any
+
 ## Styling
 - Choose approach based on needs:
   - Bootstrap: Rapid development, responsive design, component library
@@ -56,12 +67,15 @@
 - Include unit, integration, and end-to-end tests
 - Test security features
 - Document test procedures
+- Include Postman collection tests
+- Automate API testing where possible
 
 ## Documentation
 - Keep README.md updated
 - Document major decisions
 - Maintain API documentation
 - Update as changes occur
+- Keep Postman collection current
 
 ## Security
 - Use environment variables
@@ -87,6 +101,9 @@ project/
 │   └── variables.scss # Bootstrap variable overrides
 ├── tests/
 ├── docs/
+├── postman/
+│   ├── collection.json    # Main Postman collection
+│   └── environment.json   # Postman environment variables
 ├── Rules.md
 ├── tasks.md
 ├── README.md
