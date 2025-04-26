@@ -13,6 +13,13 @@
 - Follow GitFlow for branches
 - Never commit sensitive data
 - Keep .gitignore updated
+- Always ignore:
+  - tasks.md
+  - Rules.md
+  - .env files
+  - node_modules
+  - build artifacts
+  - IDE specific files
 
 ## Styling
 - Choose approach based on needs:
