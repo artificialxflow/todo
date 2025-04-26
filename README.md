@@ -1,81 +1,98 @@
-# Todo App
+# Theological Questions API
 
-A modern todo application built with Next.js, TypeScript, and Bootstrap.
+A Next.js application for managing theological questions and discussions.
 
-## Features
+## API Documentation
 
-- Modern Next.js 14 with App Router
-- TypeScript for type safety
-- Bootstrap 5 for responsive design
-- MongoDB integration
-- Clean and maintainable code structure
+### Base URL
+```
+http://localhost:3000
+```
 
-## Getting Started
+### Endpoints
 
-First, run the development server:
+#### Questions
 
+##### Get All Questions
+```
+GET /api/questions
+```
+Returns a list of all theological questions.
+
+##### Add New Question
+```
+POST /api/questions
+```
+Creates a new theological question.
+
+Request Body:
+```json
+{
+  "questionId": "string",
+  "author": "string",
+  "locale": "string",
+  "title": "string",
+  "categories": ["string"],
+  "status": "string"
+}
+```
+
+## Postman Collection Setup
+
+1. Import the Postman collection:
+   - Open Postman
+   - Click "Import" and select `postman/collection.json`
+
+2. Import the environment:
+   - Click "Import" and select `postman/environment.json`
+   - Select the "Theological Questions Environment" from the environment dropdown
+
+3. Update environment variables:
+   - Click on "Environments" in the sidebar
+   - Select "Theological Questions Environment"
+   - Update the following variables:
+     - `MONGODB_URI`: Your MongoDB connection string
+     - `NEXTAUTH_SECRET`: Your NextAuth secret key
+     - `NEXTAUTH_URL`: Your application URL
+
+## Development Setup
+
+1. Install dependencies:
+```bash
+npm install
+```
+
+2. Create a `.env.local` file with the following variables:
+```
+MONGODB_URI=mongodb://localhost:27017/theological-questions
+NEXTAUTH_SECRET=your-secret-key-here
+NEXTAUTH_URL=http://localhost:3000
+```
+
+3. Start the development server:
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Testing
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The Postman collection includes test scripts for each endpoint. To run the tests:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Open the collection in Postman
+2. Select the environment
+3. Click "Run" to execute all tests
 
-## Learn More
+## Security
 
-To learn more about Next.js, take a look at the following resources:
+- All sensitive data is stored in environment variables
+- API endpoints are protected with authentication
+- MongoDB connection is secured with proper credentials
+- Rate limiting is implemented for API endpoints
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Error Handling
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-
-## Project Structure
-
-```
-project/
-├── app/              # Next.js app directory
-├── components/       # Reusable components
-├── public/          # Static assets
-├── styles/          # SCSS styles
-│   ├── custom.scss  # Custom Bootstrap overrides
-│   └── variables.scss # Bootstrap variable overrides
-├── tests/           # Test files
-├── docs/            # Documentation
-├── Rules.md         # Project rules
-├── tasks.md         # Task tracking
-└── package.json     # Dependencies
-```
-
-## Development
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run start` - Start production server
-- `npm run lint` - Run ESLint
-- `npm run test` - Run tests
-
-## Contributing
-
-1. Follow the project rules in `Rules.md`
-2. Create a new branch for your feature
-3. Submit a pull request
-
-## License
-
-MIT
+The API uses a centralized error handling middleware that:
+- Logs errors to the console
+- Returns appropriate HTTP status codes
+- Provides meaningful error messages
+- Includes stack traces in development mode
